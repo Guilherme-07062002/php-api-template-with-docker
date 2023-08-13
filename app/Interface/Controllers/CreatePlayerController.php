@@ -1,16 +1,14 @@
 <?php
-
-namespace Inter\Controllers;
+namespace Interfac\Controllers;
 
 use \Application\Usecases\CreatePlayerUseCase;
-use \Domain\DTOs\PlayerDTOs\CreatePlayerDTO;
 use \Domain\Ports\Controller;
 use \Domain\Ports\Request;
 use \Domain\Ports\Response;
+use \Interfac\Http;
 
 class CreatePlayerController implements Controller
 {
-
     private $usecase;
 
     public function __construct(CreatePlayerUseCase $usecase)
@@ -23,6 +21,6 @@ class CreatePlayerController implements Controller
         $body = $request->body;
 
         $res = $this->usecase->execute($body);
-        return $res;
+        return \Http::created($res);
     }
 }
