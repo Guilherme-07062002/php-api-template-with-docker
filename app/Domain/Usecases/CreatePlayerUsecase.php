@@ -1,5 +1,6 @@
 <?php
 use \Domain\Usecase\Usecase;
+use \Domain\DTOs\PlayerDTOs\CreatePlayerDTO;
 
 class CreatePlayerUseCase implements Usecase
 {
@@ -9,7 +10,7 @@ class CreatePlayerUseCase implements Usecase
     {
         $this->playerRepository = $playerRepository;
     }
-    public function execute($data)
+    public function execute(CreatePlayerDTO $data)
     {
         // Lógica para criar um jogador usando $this->playerRepository
         return "Player Created!";
