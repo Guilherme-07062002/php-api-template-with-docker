@@ -5,6 +5,7 @@ namespace Domain\Usecases;
 use \Domain\Ports\Usecase;
 use \Domain\DTOs\PlayerDTOs\CreatePlayerDTO;
 use \Domain\Repositories\PlayerRepository;
+use \Domain\Entities\Player;
 
 class CreatePlayerUseCase implements Usecase
 {
@@ -13,8 +14,9 @@ class CreatePlayerUseCase implements Usecase
     {
         $this->playerRepository = $playerRepository;
     }
-    public function execute(CreatePlayerDTO $data)
+    public function execute(CreatePlayerDTO $data): Player
     {
-        $this->playerRepository->create($data);
+        $response = $this->playerRepository->create($data);
+        return $response;
     }
 }
