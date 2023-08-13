@@ -1,5 +1,7 @@
 <?php
 
+namespace Domain\Entities;
+
 class Player
 {
     public $name;

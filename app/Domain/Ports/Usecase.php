@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Usecase;
+namespace Domain\Ports;
 
 interface Usecase
 {

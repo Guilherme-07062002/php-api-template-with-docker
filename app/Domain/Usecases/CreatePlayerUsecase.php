@@ -1,18 +1,20 @@
 <?php
-use \Domain\Usecase\Usecase;
+
+namespace Domain\Usecases;
+
+use \Domain\Ports\Usecase;
 use \Domain\DTOs\PlayerDTOs\CreatePlayerDTO;
+use \Domain\Repositories\PlayerRepository;
 
 class CreatePlayerUseCase implements Usecase
 {
     private $playerRepository;
-
-    public function __construct($playerRepository)
+    public function __construct(PlayerRepository $playerRepository)
     {
         $this->playerRepository = $playerRepository;
     }
     public function execute(CreatePlayerDTO $data)
     {
-        // Lógica para criar um jogador usando $this->playerRepository
-        return "Player Created!";
+        $this->playerRepository->create($data);
     }
 }
