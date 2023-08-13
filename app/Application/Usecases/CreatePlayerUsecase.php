@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Usecases;
+namespace Application\Usecases;
 
 use \Domain\Ports\Usecase;
 use \Domain\DTOs\PlayerDTOs\CreatePlayerDTO;
